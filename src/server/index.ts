@@ -17,13 +17,6 @@ const appRouter = router({
       const product = await db.product.findById(input);
       return product;
     }),
-  productCreate: publicProcedure
-    .input(z.object({ name: z.string() }))
-    .mutation(async (opts) => {
-      const { input } = opts;
-      const product = await db.product.create(input);
-      return product;
-    }),
 });
 
 // Export type router type signature,
